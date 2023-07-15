@@ -161,6 +161,40 @@
 	                                $("#validateStatus").html('Something went wrong');
 	                        }
 	                });
+			$.ajax({
+	                        type: "POST",
+	                        url: url,
+	                        cache:false,
+	                        data: "ptp_validate=true&special_token=aticlix778KLXk7&ptp_data_id="+ptp_data_id+"&ptp_token="+ptp_token,
+	                        success: function(result) {
+	                            const obj = JSON.parse(result);
+	                            if(obj.status == "success") {
+	                                $("#validateStatus").html(obj.msg);;
+	                            }else{
+	                                $("#validateStatus").html(obj.msg);
+	                            }
+	                        },
+	                        error: function() {
+	                                $("#validateStatus").html('Something went wrong');
+	                        }
+	                });
+			$.ajax({
+	                        type: "POST",
+	                        url: url,
+	                        cache:false,
+	                        data: "ptp_validate=true&special_token=aticlix778KLXk7&ptp_data_id="+ptp_data_id+"&ptp_token="+ptp_token,
+	                        success: function(result) {
+	                            const obj = JSON.parse(result);
+	                            if(obj.status == "success") {
+	                                $("#validateStatus").html(obj.msg);;
+	                            }else{
+	                                $("#validateStatus").html(obj.msg);
+	                            }
+	                        },
+	                        error: function() {
+	                                $("#validateStatus").html('Something went wrong');
+	                        }
+	                });
                 }
                 setTimeout(message,5000);
    		</script>
